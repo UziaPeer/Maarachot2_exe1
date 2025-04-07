@@ -7,6 +7,7 @@
 
 namespace graph {
 
+// מחלקה סטטית שמכילה את האלגוריתמים הנדרשים על גרפים
 class Algorithms {
 public:
     static Graph bfs(const Graph& g, int start);
@@ -16,6 +17,6 @@ public:
     static Graph kruskal(const Graph& g);
 };
 
-} // namespace graph
+} 
 
 #endif // ALGORITHMS_HPP
