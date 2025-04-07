@@ -15,6 +15,7 @@
 
 ## מבנה התיקיות
 
+![image](https://github.com/user-attachments/assets/5bd0621e-2fa1-461b-8a9d-10594a336704)
 
 ---
 
