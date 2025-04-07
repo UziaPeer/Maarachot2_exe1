@@ -19,6 +19,6 @@ public:
     bool connected(int x, int y);
 };
 
-} // namespace graph
+} 
 
 #endif // UNIONFIND_HPP
