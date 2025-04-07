@@ -1,6 +1,6 @@
 // test/test_graph.cpp
 // Email: peeruzia@gmail.com
-// קובץ הבדיקות הראשי - כולל את הספרייה doctest
+
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "Graph.hpp"
