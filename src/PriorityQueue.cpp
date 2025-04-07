@@ -5,14 +5,17 @@
 
 namespace graph {
 
+// בנאי - מקצה מערך לפי קיבולת
 PriorityQueue::PriorityQueue(int cap) : capacity(cap), size(0) {
     heap = new PQNode[capacity];
 }
 
+// דסטרקטור - משחרר את המערך
 PriorityQueue::~PriorityQueue() {
     delete[] heap;
 }
 
+// פונקציה פנימית - מאזנת כלפי מעלה אם נוספה עדיפות נמוכה יותר מההורה
 void PriorityQueue::heapifyUp(int index) {
     while (index > 0) {
         int parent = (index - 1) / 2;
@@ -25,6 +28,7 @@ void PriorityQueue::heapifyUp(int index) {
     }
 }
 
+// פונקציה פנימית - מאזנת כלפי מטה אם נדרשת החלפה עם ילד קטן יותר
 void PriorityQueue::heapifyDown(int index) {
     int smallest = index;
     int left = 2 * index + 1;
@@ -43,6 +47,7 @@ void PriorityQueue::heapifyDown(int index) {
     }
 }
 
+// מוסיף קודקוד עם עדיפות (אם יש מקום)
 void PriorityQueue::insert(int vertex, int priority) {
     if (size == capacity) throw std::runtime_error("PriorityQueue is full");
     heap[size] = {vertex, priority};
@@ -50,6 +55,7 @@ void PriorityQueue::insert(int vertex, int priority) {
     ++size;
 }
 
+// מחזיר את הקודקוד עם העדיפות הכי גבוהה (כלומר עם הערך הכי נמוך)
 int PriorityQueue::extractMin() {
     if (isEmpty()) throw std::runtime_error("PriorityQueue is empty");
     int minVertex = heap[0].vertex;
@@ -58,10 +64,12 @@ int PriorityQueue::extractMin() {
     return minVertex;
 }
 
+// בודק אם התור ריק
 bool PriorityQueue::isEmpty() const {
     return size == 0;
 }
 
+// משנה את העדיפות של קודקוד קיים ומאזן את ה-heap
 void PriorityQueue::decreaseKey(int vertex, int newPriority) {
     for (int i = 0; i < size; ++i) {
         if (heap[i].vertex == vertex && heap[i].priority > newPriority) {
@@ -72,6 +80,7 @@ void PriorityQueue::decreaseKey(int vertex, int newPriority) {
     }
 }
 
+// בודק אם קודקוד קיים בתור
 bool PriorityQueue::contains(int vertex) const {
     for (int i = 0; i < size; ++i) {
         if (heap[i].vertex == vertex)
@@ -80,4 +89,4 @@ bool PriorityQueue::contains(int vertex) const {
     return false;
 }
 
-} // namespace graph
+} 
