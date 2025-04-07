@@ -56,6 +56,7 @@
 ## הרצה
 
 - `make Main` – לקמפל ולהריץ את main
+- `./Main` – להריץ את התכנית
 - `make test` – להריץ טסטים (doctest)
 - `make valgrind` – לבדוק שאין נזילות זיכרון
 - `make clean` – למחוק קבצי ביניים
